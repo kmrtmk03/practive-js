@@ -40,9 +40,20 @@ export default {
   padding: 0;
   margin: 3rem 0 0;
   width: 100vw;
+  @include mq(md) {
+    display: flex;
+    width: 60vw;
+    margin: 100px auto;
+    justify-content: space-between;
+  }
   .link {
     @include ButtonLg();
     margin: 0 auto 1rem;
+    @include mq(md) {
+      width: 10vw;
+      height: 10vw;
+      line-height: 10vw;
+    }
     :first-child {
       margin-bottom: 0;
     }

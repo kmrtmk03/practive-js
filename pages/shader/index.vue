@@ -18,11 +18,5 @@ export default {
 <style lang="scss" scoped>
 .title {
     @include Title();
-    @include mq(md) {
-        color: blue;
-        @include mq(lg) {
-            color: green;
-        }
-    }
 }
 </style>
