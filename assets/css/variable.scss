@@ -1,0 +1,38 @@
+/*
+    Variable
+*/
+//Color
+$base-color: #333333;
+$sub-color: red;
+//Breakpoint
+$breakpoints : (
+    "sm": "screen and (min-width: 480px)", //スマホ
+    "md": "screen and (min-width: 768px)", //タブレット
+    "lg": "screen and (min-width: 1024px)" //PC
+);
+
+/*
+    Mixin
+*/
+@mixin mq($breakpoint:md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+@mixin Title() {
+    color: $base-color;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.6rem 0;
+    border-bottom: 2px solid $base-color;
+    font-family: 'Josefin Sans', sans-serif;
+}
+@mixin ButtonLg() {
+    font-size: 1rem;
+    width: 85vw;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border: 1px solid $base-color;
+    border-radius: 4px;
+}
