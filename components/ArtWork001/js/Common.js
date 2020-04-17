@@ -2,7 +2,6 @@ import * as THREE from "three"
 
 import vertexShader from '../glsl/shape.vert'
 import fragmentShader from '../glsl/shape.frag'
-import { Vector2 } from "three"
 
 class Common {
     constructor() {
@@ -20,7 +19,10 @@ class Common {
         this.geo = null
         this.mat = null
 
-        this.mouse = new Vector2(0.0, 0.0)
+        this.mouse = new THREE.Vector2(0.0, 0.0)
+
+        this.loader = null
+        this.texture = null
 
         this.uniforms = {
             uAspect: {
@@ -38,12 +40,16 @@ class Common {
     }
 
     Init($canvas) {
+        //Canvasのサイズ
         this.SetSize()
 
+        //Scene
         this.scene = new THREE.Scene()
 
+        //Camera
         this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, -1);
 
+        //Renderer
         this.renderer = new THREE.WebGLRenderer({
             canvas: $canvas
         })
@@ -51,20 +57,26 @@ class Common {
         this.renderer.setSize(this.size.windowW, this.size.windowH);
         this.renderer.setClearColor(0xffffff);
         
+        //Light
         this.light = new THREE.PointLight(0x000000)
         this.light.position.set(2, 2, 2)
         this.scene.add(this.light)
 
+        //Geometry
         this.geo = new THREE.PlaneGeometry(2, 2, 1, 1)
         
+        //Shader
         this.uniforms.uAspect.value = this.size.windowW / this.size.windowH
 
+        //Material
         this.mat = new THREE.ShaderMaterial({
             uniforms: this.uniforms,
             vertexShader: vertexShader,
             fragmentShader: fragmentShader,
             wireframe: false
         })
+
+        //Mesh
         this.mesh = new THREE.Mesh(this.geo, this.mat)
         this.scene.add(this.mesh)
 
