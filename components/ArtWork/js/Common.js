@@ -23,6 +23,9 @@ class Common {
         this.uniforms = {
             uAspect: {
                 value: null
+            },
+            uTime: {
+                value: null
             }
         }
 
@@ -88,7 +91,10 @@ class Common {
             this.Render()            
         })
 
-        this.Rotate()
+        // this.Rotate()
+
+        const sec = performance.now() / 1000
+        this.uniforms.uTime.value = sec
         this.renderer.render(this.scene, this.camera);
     }
 
