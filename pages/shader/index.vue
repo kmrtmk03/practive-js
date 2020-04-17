@@ -1,16 +1,19 @@
 <template>
     <section class="container">
         <h1 class="title">WebGL</h1>
-        <Artwork />
+        <!-- <Artwork000 /> -->
+        <Artwork001 />
     </section>
 </template>
 
 <script>
-import Artwork from '@/components/ArtWork/index.vue'
+import Artwork000 from '@/components/ArtWork000/index.vue'
+import Artwork001 from '@/components/ArtWork001/index.vue'
 
 export default {
     components: {
-        Artwork
+        Artwork000,
+        Artwork001
     }
 }
 </script>

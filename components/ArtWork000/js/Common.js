@@ -2,7 +2,7 @@ import * as THREE from "three"
 
 import vertexShader from '../glsl/shape.vert'
 import fragmentShader from '../glsl/shape.frag'
-import { PlaneGeometry } from "three"
+import { Vector2 } from "three"
 
 class Common {
     constructor() {
@@ -18,14 +18,19 @@ class Common {
         this.light = null
 
         this.geo = null
-        
         this.mat = null
+
+        this.mouse = new Vector2(0.0, 0.0)
+
         this.uniforms = {
             uAspect: {
                 value: null
             },
             uTime: {
                 value: null
+            },
+            uMouse: {
+                value: this.mouse
             }
         }
 
@@ -38,8 +43,6 @@ class Common {
         this.scene = new THREE.Scene()
 
         this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, -1);
-        // this.camera.position.set(0, 5, 5)
-        // this.camera.lookAt(this.scene.position)
 
         this.renderer = new THREE.WebGLRenderer({
             canvas: $canvas
@@ -52,9 +55,6 @@ class Common {
         this.light.position.set(2, 2, 2)
         this.scene.add(this.light)
 
-        // this.geo = new THREE.BoxGeometry(1, 1, 1)
-        // this.mat = new THREE.MeshNormalMaterial()
-        
         this.geo = new THREE.PlaneGeometry(2, 2, 1, 1)
         
         this.uniforms.uAspect.value = this.size.windowW / this.size.windowH
@@ -86,21 +86,21 @@ class Common {
     }
 
     Render(){
-        // this.Rotate()
         requestAnimationFrame(() => {
             this.Render()            
         })
 
-        // this.Rotate()
+        //時間経過
+        // const sec = performance.now() / 1000
+        this.uniforms.uTime.value = 0.5
 
-        const sec = performance.now() / 1000
-        this.uniforms.uTime.value = sec
+        //レンダリング
         this.renderer.render(this.scene, this.camera);
     }
 
-    Rotate() {
-        this.mesh.rotation.x += 0.005
-        this.mesh.rotation.y += 0.005
+    MouseMoved(x, y) {
+        this.mouse.x = x / this.size.windowW
+        this.mouse.y = 1.0 - (y / this.size.windowH)
     }
 }
 
