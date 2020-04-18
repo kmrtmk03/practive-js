@@ -4,7 +4,8 @@
         <!-- <Artwork000 /> -->
         <!-- <Artwork001 /> -->
         <!-- <Artwork002 /> -->
-        <Artwork003 />
+        <!-- <Artwork003 /> -->
+        <Artwork004 />
     </section>
 </template>
 
@@ -13,13 +14,15 @@ import Artwork000 from '@/components/ArtWork000/index.vue'
 import Artwork001 from '@/components/ArtWork001/index.vue'
 import Artwork002 from '@/components/ArtWork002/index.vue'
 import Artwork003 from '@/components/ArtWork003/index.vue'
+import Artwork004 from '@/components/ArtWork004/index.vue'
 
 export default {
     components: {
         Artwork000,
         Artwork001,
         Artwork002,
-        Artwork003
+        Artwork003,
+        Artwork004
     }
 }
 </script>

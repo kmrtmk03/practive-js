@@ -5,7 +5,8 @@ uniform vec2 uResolution; //画面解像度
 
 void main() {
     vec2 p = (gl_FragCoord.xy * 2.0 - uResolution.xy) / min(uResolution.x, uResolution.y);
-    vec2 q = mod(p, 0.2) - 0.1;
+    // vec2 q = mod(p, 0.5) - 0.5;
+    vec2 q = p;
 
     float s = sin(uTime);
     float c = cos(uTime);
