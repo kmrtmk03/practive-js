@@ -20,7 +20,8 @@ export default {
         { id: 1, to: '/svg-anime_js', text: 'svg-anime_js'},
         { id: 2, to: '/anime_js', text: 'anime.'},
         { id: 3, to: '/pixi', text: 'Pixi'},
-        { id: 4, to: '/shader', text: 'Shader'}
+        { id: 4, to: '/shader', text: 'Shader'},
+        { id: 5, to: '/scroll', text: 'Scroll'}
       ]
     }
   }
@@ -42,7 +43,8 @@ export default {
   width: 100vw;
   @include mq(md) {
     display: flex;
-    width: 60vw;
+    flex-wrap: wrap;
+    width: 54vw;
     margin: 100px auto;
     justify-content: space-between;
   }
@@ -53,6 +55,7 @@ export default {
       width: 10vw;
       height: 10vw;
       line-height: 10vw;
+      margin: 0 0 1vw;
     }
     :first-child {
       margin-bottom: 0;
