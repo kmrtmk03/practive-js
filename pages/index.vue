@@ -52,23 +52,25 @@ export default {
     @include ButtonLg();
     margin: 0 auto 1rem;
     position: relative;
+    overflow: hidden;
     &::before {
-      @include Giji();
-      top: 0;
-      left: 0;
+      @include Absolute(0, 0);
       height: 100%;
-      width: 0;
+      width: 200%;
       z-index: 0;
-      background-color: $base-color;
+      border-right: 5vw solid transparent;
+      border-bottom: 10vw solid $base-color;
+      transform: translateX(-100%);
+      transition: 0.3s;
     }
     &:hover {
-      $transitionTime: 0.4s;
+      $transitionTime: 0.8s;
       &>a {
         color: #fff;
         transition: $transitionTime;
       }
       &::before {
-        width: 100%;
+        transform: translateX(0);
         transition: $transitionTime;
       }
     }

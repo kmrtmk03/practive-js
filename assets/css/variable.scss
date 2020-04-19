@@ -36,8 +36,10 @@ $breakpoints : (
   border: 1px solid $base-color;
   border-radius: 4px;
 }
-@mixin Giji() {
+@mixin Absolute($top: 0px, $left: 0px) {
   content: '';
   display: block;
   position: absolute;
+  top: $top;
+  left: $left;
 }
