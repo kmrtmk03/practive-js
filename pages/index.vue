@@ -51,6 +51,28 @@ export default {
   .link {
     @include ButtonLg();
     margin: 0 auto 1rem;
+    position: relative;
+    &::before {
+      @include Giji();
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      z-index: 0;
+      background-color: $base-color;
+    }
+    &:hover {
+      $transitionTime: 0.4s;
+      &>a {
+        color: #fff;
+        transition: $transitionTime;
+      }
+      &::before {
+        width: 100%;
+        transition: $transitionTime;
+      }
+    }
+
     @include mq(md) {
       width: 10vw;
       height: 10vw;
@@ -65,6 +87,8 @@ export default {
     color: $base-color;
     display: block;
     text-align: center;
+    position: relative;
+    z-index: 2;
     :visited {
       color: $base-color;
     }
