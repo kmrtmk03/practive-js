@@ -21,7 +21,8 @@ export default {
         { id: 2, to: '/anime_js', text: 'anime.'},
         { id: 3, to: '/pixi', text: 'Pixi'},
         { id: 4, to: '/shader', text: 'Shader'},
-        { id: 5, to: '/scroll', text: 'Scroll'}
+        { id: 5, to: '/scroll', text: 'Scroll'},
+        { id: 6, to: '/scroll_01', text: 'Scroll_01'}
       ]
     }
   }
