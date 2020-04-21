@@ -18,11 +18,12 @@ export default {
       links: [
         { id: 0, to: '/svg', text: 'SVG'},
         { id: 1, to: '/svg-anime_js', text: 'svg-anime_js'},
-        { id: 2, to: '/anime_js', text: 'anime.'},
+        { id: 2, to: '/anime_js', text: 'anime.js'},
         { id: 3, to: '/pixi', text: 'Pixi'},
-        { id: 4, to: '/shader', text: 'Shader'},
-        { id: 5, to: '/scroll', text: 'Scroll'},
-        { id: 6, to: '/scroll_01', text: 'Scroll_01'}
+        { id: 4, to: '/scroll', text: 'Scroll'},
+        { id: 5, to: '/scroll_01', text: 'Scroll_01'},
+        { id: 6, to: '/shader', text: 'Shader'},
+        { id: 7, to: '/slideshow', text: 'Slideshow'}
       ]
     }
   }
