@@ -22,7 +22,7 @@
     "pixi.js": "^5.2.1",
     "raw-loader": "^4.0.1",
     "sass-loader": "^8.0.2",
-    "three": "^0.115.0",
+    "three": "^0.125.0",
     "vue-smoothscroll": "^0.2.0"
   },
   "devDependencies": {
